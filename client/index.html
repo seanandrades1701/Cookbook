@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Find Meal For Your Ingredients</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header with Navigation -->
+    <div class="header">
+      <div class="nav-buttons">
+        <button id="about-us-btn" class="btn">About Us</button>
+      </div>
+      <!-- User Status -->
+      <div class="user-status">
+        <span id="user-welcome" style="display: none;">Welcome, <span id="username"></span>!</span>
+        <button id="login-register-btn" class="btn">Login/Register</button>
+        <button id="logout-btn" class="btn" style="display: none;">Logout</button>
+      </div>
+    </div>
+
+    <!-- Cookbook Text (shown when not logged in) -->
+    <div class="logo-wrapper" id="logo-wrapper">
+      <h1 class="cookbook-text">COOKBOOK</h1>
+    </div>
+
+    <!-- About Us Modal -->
+    <div class="info-modal" id="about-us-modal" style="display: none;">
+      <div class="info-modal-content">
+        <button class="btn info-close-btn" id="about-us-close-btn"><i class="fas fa-times"></i></button>
+        <h2 class="title">About Us</h2>
+        <p>We are a passionate team of food enthusiasts dedicated to helping you find delicious meals using the ingredients you already have. Our mission is to make cooking simple, fun, and accessible for everyone. Explore recipes, discover new flavors, and enjoy the art of cooking with us!</p>
+      </div>
+    </div>
+
+    <!-- Login/Register Modal -->
+    <div class="auth-modal" id="auth-modal" style="display: none;">
+      <div class="auth-modal-content">
+        <button class="btn auth-close-btn" id="auth-close-btn"><i class="fas fa-times"></i></button>
+        <!-- Login Form -->
+        <div id="login-form">
+          <h2 class="title">Login</h2>
+          <div class="auth-form">
+            <input type="text" id="login-username" class="auth-control" placeholder="Username">
+            <input type="password" id="login-password" class="auth-control" placeholder="Password">
+            <button class="btn auth-btn" id="login-btn">Login</button>
+            <p>Don't have an account? <a href="#" id="show-register">Register</a></p>
+          </div>
+        </div>
+        <!-- Register Form -->
+        <div id="register-form" style="display: none;">
+          <h2 class="title">Register</h2>
+          <div class="auth-form">
+            <input type="text" id="register-username" class="auth-control" placeholder="Username">
+            <input type="password" id="register-password" class="auth-control" placeholder="Password">
+            <button class="btn auth-btn" id="register-btn">Register</button>
+            <p>Already have an account? <a href="#" id="show-login">Login</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="meal-wrapper" id="meal-wrapper" style="display: none;">
+      <!-- Meal Search Section -->
+      <div class="meal-search">
+        <h1 class="title">COOKBOOK</h1>
+        <h4 class="title">Find Meals For Your Ingredients</h4>
+        <blockquote>Real food doesn't have ingredients, real food is ingredients.<br>
+          <cite>- Jamie Oliver</cite>
+        </blockquote>
+        <div class="meal-search-box">
+          <input type="text" class="search-control" placeholder="Enter an ingredient" id="search-input">
+          <button type="submit" class="search-btn btn" id="search-btn">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="meal-result">
+        <h2 class="title">Your Search Results:</h2>
+        <div id="meal"></div>
+      </div>
+
+      <div class="meal-details">
+        <button type="button" class="btn recipe-close-btn" id="recipe-close-btn">
+          <i class="fas fa-times"></i>
+        </button>
+        <div class="meal-details-content"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
